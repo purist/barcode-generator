@@ -20,3 +20,11 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+desc 'Generate HTML for README.markdown'
+task :readme do
+  require 'redcarpet'
+  markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,:autolink => true, :space_after_headers => true)
+  puts markdown.render( File.new( 'README.markdown' ).read )
+  # #puts markdown.to_html
+end

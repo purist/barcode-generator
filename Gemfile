@@ -1,0 +1,1 @@
+gem 'gbarcode', :git => 'https://github.com/racx/gbarcode.git'
